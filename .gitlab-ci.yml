@@ -18,6 +18,7 @@ cache:
     - tools/10_get_fructose.sh
     - make CXX=$compiler OS_NAME=$os_name
     - make CXX=$compiler OS_NAME=$os_name AdsLibTest.bin
+    - make CXX=$compiler OS_NAME=$os_name AdsLibOOITest.bin
     - cd example
     - make CXX=$compiler OS_NAME=$os_name
   artifacts:
@@ -25,6 +26,7 @@ cache:
     - AdsLib-$os_name.a
     - AdsLibOOI-$os_name.a
     - AdsLibTest.bin
+    - AdsLibOOITest.bin
     - example/example.bin
 
 build:clang:
