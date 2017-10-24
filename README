@@ -1,3 +1,10 @@
+Forked from github.com/Beckhoff/ADS.
+Converted to use CMake instead of Makefiles to ease integration into our existing projects.
+
+FROM ORIGINAL README FILE
+=========================
+
+
 This library is intended to provide easy use as ADS client applications running on non-windows systems (e.g. Linux, Mac OS...) to communicate with TwinCAT devices via TCP/IP.
 
 To build this library a recent compiler with C++11 support is required. 
