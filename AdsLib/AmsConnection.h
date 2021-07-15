@@ -87,8 +87,10 @@ struct AmsConnection : AmsProxy {
         AmsResponse* response = Write(request.frame, request.destAddr, srcAddr, request.cmdId);
         if (response) {
             if (response->Wait(tmms)) {
-                const uint32_t bytesAvailable = std::min<uint32_t>(request.bufferLength,
-                                                                   response->frame.size() - sizeof(T));
+                const uint32_t bytesAvailable = std::min<uint32_t>(
+                    request.bufferLength,
+                    (int)(response->frame.size() - sizeof(T))
+                );
                 T header(response->frame.data());
                 memcpy(request.buffer, response->frame.data() + sizeof(T), bytesAvailable);
                 if (request.bytesRead) {

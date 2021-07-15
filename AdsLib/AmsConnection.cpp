@@ -224,7 +224,7 @@ bool AmsConnection::ReceiveNotification(const AoEHeader& header)
     while (bytesLeft > chunk) {
         Receive(ring.write, chunk);
         ring.Write(chunk);
-        bytesLeft -= chunk;
+        bytesLeft -= (uint32_t)chunk;
         chunk = ring.WriteChunk();
     }
     Receive(ring.write, bytesLeft);
